@@ -1,4 +1,4 @@
-<?php
+ <?php
 class DbEntry{
     public $table; 
     private $db;
@@ -10,7 +10,7 @@ class DbEntry{
     }
     
     //get the rows in the table
-    public function getRows($limit = 512, $class){
+    public function getRows($limit = 512){
         //make a query
         $q = $this->db->prepare("SELECT * FROM ".$this->table." LIMIT ".$limit);
         $q->execute();
@@ -18,7 +18,7 @@ class DbEntry{
         //put the results in an array
         $rows = array();
         while($f = $q->fetch()){
-            $obj = new $class;
+            $obj = new $this->table($this->db);
             $obj->populate($f);
             array_push($rows, $obj);
         }
