@@ -1,19 +1,19 @@
 <?php
 class Controller{
-    private $view;
-    private $model;
-    private $request;
-    private $data;
+    public $db;
+    public $view;
+    public $request;
+    public $data;
     
-    public function __construct($model, $view, $request) {
-        $this->model = $model;
+    public function __construct($view, $request, $db) {
         $this->view = $view;
         $this->request = $request;
+        $this->db = $db;
         
         $this->init();
     }
     
-    public function init(){
+    public function init(){      
         $this->render();
     }
     

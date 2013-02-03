@@ -7,6 +7,8 @@ class View{
     }
     
     public function render($data) {
-        include "templates/".$template;
+        if (file_exists("templates/".$this->template.".php")){
+            include "templates/".$this->template.".php";
+        }
     }
 }

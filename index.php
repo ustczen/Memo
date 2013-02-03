@@ -11,6 +11,6 @@ require_once 'views/View.php';
 require_once 'controllers/Controller.php';
 require_once 'controllers/HomeController.php';
 
-$t = new dbEntry('Memo', $db);
-
-var_dump($t->getRows());
+//create a view and a controller
+$view       = new View('Home');
+$controller = new HomeController($view, $_REQUEST, $db);
