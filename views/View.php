@@ -8,7 +8,7 @@ class View{
     
     public function render($data) {
         if (file_exists("templates/".$this->template.".php")){
-            include "templates/".$this->template.".php";
+            include "templates/Main.php";
         }
     }
 }

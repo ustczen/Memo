@@ -25,4 +25,16 @@ class DbEntry{
         
         return $rows;
     }
+    
+    public function getRow($id){
+        //make a query
+        $q = $this->db->prepare("SELECT * FROM ".$this->table." WHERE id=".(int)$id." LIMIT 1");
+        $q->execute();
+        
+        $f = $q->fetch();
+        $obj = new $this->table($this->db);
+        $obj->populate($f);
+        
+        return $obj;
+    }
 }

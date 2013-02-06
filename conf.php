@@ -1,5 +1,8 @@
 <?php
-require_once 'environment.php';
+require_once "environment.php";
+
+//set salt to use with pw's
+DEFINE("SALT", "c90ef7802e33324ab8d232a9bb4deba5");
 
 //connect to db
 try {

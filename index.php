@@ -1,16 +1,30 @@
 <?php
-require_once 'conf.php';
+require_once "conf.php";
 
 //models
-require_once 'models/DbEntry.php';
-require_once 'models/Model.php';
-require_once 'models/Memo.php';
+require_once "models/DbEntry.php";
+require_once "models/Model.php";
+require_once "models/Memo.php";
+require_once "models/User.php";
 //views
-require_once 'views/View.php';
+require_once "views/View.php";
 //controllers
-require_once 'controllers/Controller.php';
-require_once 'controllers/HomeController.php';
+require_once "controllers/Controller.php";
+require_once "controllers/HomeController.php";
+require_once "controllers/RegisterController.php";
 
-//create a view and a controller
-$view       = new View('Home');
-$controller = new HomeController($view, $_REQUEST, $db);
+//Routing:
+
+// if the page url-parameter is not set
+if (!isset($_GET["page"])) $_GET["page"] = '';
+
+//register page
+if ($_GET["page"] == "register"){
+    //create a view and a controller for the register page
+    $view       = new View("Register");
+    $controller = new RegisterController($view, $_REQUEST, $db);
+} else {
+    //create a view and a controller for the home page
+    $view       = new View("Home");
+    $controller = new HomeController($view, $_REQUEST, $db);
+}
