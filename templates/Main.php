@@ -6,5 +6,16 @@
     </head>
     <body>
         <?php include $this->template.".php"; ?>
+        
+        <?php
+        if (isset($data['errors'])):
+            foreach($data['errors'] as $error):
+        ?>
+                <div class="error"><?php echo $error; ?></div>
+        <?php
+            endforeach;
+        endif;
+        ?>
+        
     </body>
 </html>

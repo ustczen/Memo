@@ -5,14 +5,25 @@ class RegisterController extends Controller{
         $this->data["registered"] = false;
         //if the request contains name and pw, create a new user
         if (!empty($this->request["name"]) && !empty($this->request["password"])){
-            //create a new user
-            $user = new User($this->db);
-            $user->name = $this->request["name"];
-            $user->setPassword($this->request["password"]);
-            //save the db record
-            $user->create();
             
-            $this->data["registered"] = true;
+            //check if user already exists
+            $u = new DbEntry('User', $this->db);
+            $u = $u->getWhere('name', $this->request["name"]);
+            
+            if ($u){
+                if (!isset($this->data['errors']) || !is_array($this->data['errors'])) $this->data['errors'] = array();
+                array_push($this->data['errors'], 'The username you entered is already taken :(');
+            }
+            else{
+                //create a new user
+                $user = new User($this->db);
+                $user->name = $this->request["name"];
+                $user->setPassword($this->request["password"]);
+                //save the db record
+                $user->create();
+
+                $this->data["registered"] = true;
+            }
         }
         
         parent::init();

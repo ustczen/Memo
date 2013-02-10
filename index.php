@@ -24,8 +24,8 @@ if (isset($_POST['name']) && isset($_POST['password'])){
 if (isset($_COOKIE['user']) && isset($_COOKIE['pw'])){
     $user = new DbEntry('User', $db);
     $user = $user->getWhere('name', $_COOKIE['user']);
-    if (!$user->checkPassword($_COOKIE['pw'])){
-        unset($user);
+    if (!$user || !$user->checkPassword($_COOKIE['pw'])){
+        $user = null;
     }
 }
 

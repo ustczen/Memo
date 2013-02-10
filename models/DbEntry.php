@@ -32,6 +32,7 @@ class DbEntry{
         $q->execute();
         
         $f = $q->fetch();
+        if (!$f) return null;
         $obj = new $this->table($this->db);
         $obj->populate($f);
         
@@ -47,6 +48,7 @@ class DbEntry{
         $q->execute();
         
         $f = $q->fetch();
+        if (!$f) return null;
         $obj = new $this->table($this->db);
         $obj->populate($f);
         
