@@ -8,6 +8,7 @@ class Model{
     }
     
     public function populate($data){
+        if (!is_array($data)) return;
         foreach($data as $key => $value){
             $this->$key = $value;
         }

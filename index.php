@@ -13,6 +13,22 @@ require_once "controllers/Controller.php";
 require_once "controllers/HomeController.php";
 require_once "controllers/RegisterController.php";
 
+//login logic
+if (isset($_POST['name']) && isset($_POST['password'])){
+    setCookie('user', $_POST['name']);
+    $_COOKIE['user'] = $_POST['name'];
+    setCookie('pw', $_POST['password']);
+    $_COOKIE['pw'] = $_POST['password'];
+}
+
+if (isset($_COOKIE['user']) && isset($_COOKIE['pw'])){
+    $user = new DbEntry('User', $db);
+    $user = $user->getWhere('name', $_COOKIE['user']);
+    if (!$user->checkPassword($_COOKIE['pw'])){
+        unset($user);
+    }
+}
+
 //Routing:
 
 // if the page url-parameter is not set

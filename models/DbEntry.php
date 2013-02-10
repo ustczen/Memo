@@ -1,4 +1,4 @@
- <?php
+<?php
 class DbEntry{
     public $table; 
     private $db;
@@ -29,6 +29,21 @@ class DbEntry{
     public function getRow($id){
         //make a query
         $q = $this->db->prepare("SELECT * FROM ".$this->table." WHERE id=".(int)$id." LIMIT 1");
+        $q->execute();
+        
+        $f = $q->fetch();
+        $obj = new $this->table($this->db);
+        $obj->populate($f);
+        
+        return $obj;
+    }
+    
+    public function getWhere($col, $value){
+        $value = mysql_real_escape_string($value);
+        $col = mysql_real_escape_string($col);
+        
+        //make a query
+        $q = $this->db->prepare("SELECT * FROM ".$this->table." WHERE ".$col."='".$value."' LIMIT 1");
         $q->execute();
         
         $f = $q->fetch();
