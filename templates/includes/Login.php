@@ -4,7 +4,7 @@ if (empty($user)):?>
     <form method="post">
         <input type="text" name="name" placeholder="Name" />
         <input type="password" name="password" placeholder="Password" />
-        <input type="submit" value="Login" />
+        <input type="submit" value="Login" class="btn" />
         <br />
         <a href="?page=register">Register</a>
     </form>
