@@ -13,6 +13,6 @@ Hello, <?php echo $user->name; ?>!
 <form method="post" />
     <input type="hidden" name="name" value="" />
     <input type="hidden" name="password" value="" />
-    <input type="submit" value="Logout" />
+    <input type="submit" value="Logout" class="btn" />
 </form>
 <?php endif; ?>

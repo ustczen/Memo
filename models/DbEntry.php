@@ -54,4 +54,23 @@ class DbEntry{
         
         return $obj;
     }
+    
+    public function getManyWhere($col, $value, $limit=512){
+        $value = mysql_real_escape_string($value);
+        $col = mysql_real_escape_string($col);
+        
+        //make a query
+        $q = $this->db->prepare("SELECT * FROM ".$this->table." WHERE ".$col."='".$value."' LIMIT ".$limit);
+        $q->execute();
+        
+        //put the results in an array
+        $rows = array();
+        while($f = $q->fetch()){
+            $obj = new $this->table($this->db);
+            $obj->populate($f);
+            array_push($rows, $obj);
+        }
+        
+        return $rows;
+    }
 }
