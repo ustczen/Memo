@@ -3,6 +3,31 @@ class HomeController extends Controller{
     public function init(){
         global $user;
         
+        //if a new memo has been posted, try to insert it into the db
+        if ($user && !empty($this->request['name']) && !empty($this->request['content'])){
+            //if an id is defined, modify the memo with this id
+            if (!empty($this->request['id'])){
+                //edit an existing memo
+                
+                //fetch the memo
+                $db = new DbEntry('Memo', $this->db);
+                
+                $memo = $db->getRow($this->request['id']);
+                if ($memo->ownerId == $user->id){
+                    $memo->name = $this->request['name'];
+                    $memo->content = $this->request['content'];
+                    $memo->save();
+                }
+            }else{
+                //create a new memo
+                $memo = new Memo($this->db);
+                $memo->name = $this->request['name'];
+                $memo->content = $this->request['content'];
+                $memo->ownerId = $user->id;
+                $memo->create();
+            }
+        }
+        
         //create a dbEntry for the memos
         $memos = new dbEntry('Memo', $this->db);
         

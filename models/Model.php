@@ -10,6 +10,7 @@ class Model{
     public function populate($data){
         if (!is_array($data)) return;
         foreach($data as $key => $value){
+            if (is_numeric($key)) continue;
             $this->$key = $value;
         }
     }
@@ -39,7 +40,7 @@ class Model{
         //loop through variables in current object
         foreach($this as $key => $value){
             if ($key == 'db' || $key == 'table' || $key == 'id') continue;
-            //bobby tables
+            //bobby tables :D
             $key = mysql_real_escape_string($key);
             $value = mysql_real_escape_string($value);
             array_push($keys, $key);

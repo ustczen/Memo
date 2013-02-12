@@ -39,7 +39,7 @@ class DbEntry{
         return $obj;
     }
     
-    public function getWhere($col, $value){
+    public function getWhere($col, $value=false){
         $value = mysql_real_escape_string($value);
         $col = mysql_real_escape_string($col);
         
