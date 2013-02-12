@@ -28,6 +28,14 @@ class HomeController extends Controller{
             }
         }
         
+        if ($user && !empty($this->request['delete'])){
+            //fetch the memo
+            $db = new DbEntry('Memo', $this->db);
+            $memo = $db->getRow($this->request['delete']);
+            //if the current user is the owner, delete the memo
+            if ($memo && $memo->ownerId == $user->id) $memo->delete();
+        }
+        
         //create a dbEntry for the memos
         $memos = new dbEntry('Memo', $this->db);
         

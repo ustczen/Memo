@@ -50,4 +50,9 @@ class Model{
         $q = $this->db->prepare("INSERT INTO ".$this->table." (".implode(",", $keys).") VALUES(".implode(",", $values).")");
         $q->execute();
     }
+    
+    public function delete(){
+        $q = $this->db->prepare("DELETE FROM ".$this->table." WHERE id=".(int)$this->id);
+        $q->execute();
+    }
 }

@@ -7,8 +7,8 @@
                 <h3><?php echo $memo->name; ?></h3>
                 <p><?php echo $memo->content; ?></p>
                 <div class="controls">
-                    <button class="btn editMemo"><i class="icon icon-edit"></i></button>
-                    <button class="btn"><i class="icon icon-trash"></i></button>
+                    <button class="btn editMemo"><i class="icon-edit"></i></button>
+                    <a href="?delete=<?php echo $memo->id; ?>" class="btn"><i class="icon-trash"></i></a>
                 </div>
             </div>
             <form method="post" class="memoForm">
@@ -22,11 +22,16 @@
     <?php endforeach; ?>
 <?php endif; ?>
 
-<div class="well memo">
-    <h3>Make a new memo:</h3>
-    <form method="post" class="memoForm">
-        <input type="text" name="name" placeholder="Name" />
-        <textarea name="content" placeholder="Content" rows="3"></textarea>
-        <input type="submit" value="Save" />
-    </form>
-</div>
+<?php if (!empty($user)): ?>
+    <div class="well memo">
+        <div class="memoContent">
+            <button class="btn editMemo">Add a memo <i class="icon-plus"></i></button>
+        </div>
+        <form method="post" class="memoForm">
+            <input type="text" name="name" placeholder="Name" />
+            <textarea name="content" placeholder="Content" rows="3"></textarea>
+            <input type="submit" value="Save" class="btn" />
+            <input type="reset" value="Cancel" class="btn closeEdit" />
+        </form>
+    </div>
+<?php endif; ?>

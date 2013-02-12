@@ -1,6 +1,4 @@
-<?php
-global $user;
-if (empty($user)):?>
+<?php if (empty($user)):?>
     <form method="post">
         <input type="text" name="name" placeholder="Name" />
         <input type="password" name="password" placeholder="Password" />
