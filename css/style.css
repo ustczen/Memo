@@ -1,0 +1,30 @@
+body{
+    padding: 10px;
+}
+
+form .btn{
+    margin-bottom: 10px;
+}
+
+.memoForm{
+    display: none;
+    margin: 15px 0 0 0;
+}
+
+.memoForm input[type=text]{
+    width: 98%;
+}
+
+.memoForm textarea{
+    width: 98%;
+}
+
+.memo{
+    position: relative;
+}
+
+.controls{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
