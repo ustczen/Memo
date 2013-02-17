@@ -6,6 +6,7 @@ require_once "models/DbEntry.php";
 require_once "models/Model.php";
 require_once "models/Memo.php";
 require_once "models/User.php";
+require_once "models/Category.php";
 //views
 require_once "views/View.php";
 //controllers

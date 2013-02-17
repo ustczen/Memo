@@ -6,20 +6,20 @@ form .btn{
     margin-bottom: 10px;
 }
 
-.memoForm{
+.entryForm{
     display: none;
     margin: 15px 0 0 0;
 }
 
-.memoForm input[type=text]{
+.entryForm input[type=text]{
     width: 98%;
 }
 
-.memoForm textarea{
+.entryForm textarea{
     width: 98%;
 }
 
-.memo{
+.entry{
     position: relative;
 }
 
@@ -27,4 +27,56 @@ form .btn{
     position: absolute;
     top: 10px;
     right: 10px;
+}
+
+.col{
+    width: 49%;
+    margin-right: 1%;
+    float: left;
+}
+
+.wide{
+    width: 79%;
+}
+
+.wideLink{
+    width: 100%;
+    display: inline-block;
+}
+
+.narrow{
+    width: 19%;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+.categoryEntry{
+    width: 97%;
+    padding-left: 5px;
+    line-height: 36px;
+    margin-bottom: 2px;
+    background: #ddd;
+    border-radius: 3px;
+    position: relative;
+    display: inline-block;
+}
+
+.categoryEntry.active{
+    background: #bbb;
+}
+
+.categoryEntry .controls{
+    top: 0;
+    right: 3px;
+}
+
+.categoryEntry .entryForm{
+    margin: 3px 0 0 0;
+}
+
+
+.categoryEntry .entryForm input[type=text]{
+    width: 93%;
 }
