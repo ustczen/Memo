@@ -48,6 +48,10 @@ form .btn{
     width: 19%;
 }
 
+ul{
+    margin-bottom: 0;
+}
+
 ul li{
     list-style-type: none;
 }

@@ -47,6 +47,7 @@ class HomeController extends Controller{
                     $cat = new Category($this->db);
                     $cat->name = $this->request['category_name'];
                     $cat->ownerId = $user->id;
+                    if (isset($this->request['category'])) $cat->parentId = $this->request['category'];
                     $cat->create();
                 }
             }

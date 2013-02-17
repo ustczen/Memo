@@ -14,6 +14,8 @@ require_once "controllers/Controller.php";
 require_once "controllers/HomeController.php";
 require_once "controllers/RegisterController.php";
 
+$printed = array();
+
 //login logic
 if (isset($_POST['name']) && isset($_POST['password'])){
     setCookie('user', $_POST['name']);
