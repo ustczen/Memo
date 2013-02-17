@@ -2,7 +2,7 @@
 require_once "conf.php";
 
 //user
-$q = $db->prepare("CREATE TABLE IF NOT EXISTS `User` (
+$q = $db->prepare("CREATE TABLE `User` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modified` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -13,7 +13,7 @@ $q = $db->prepare("CREATE TABLE IF NOT EXISTS `User` (
 $q->execute();
 
 //memo
-$q = $db->prepare("CREATE TABLE IF NOT EXISTS `Memo` (
+$q = $db->prepare("CREATE TABLE `Memo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modified` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -26,7 +26,7 @@ $q = $db->prepare("CREATE TABLE IF NOT EXISTS `Memo` (
 $q->execute();
 
 //category
-$q = $db->prepare("CREATE TABLE IF NOT EXISTS `Category` (
+$q = $db->prepare("CREATE TABLE `Category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modified` timestamp NULL DEFAULT '0000-00-00 00:00:00',
