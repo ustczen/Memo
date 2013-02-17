@@ -1,6 +1,6 @@
 <?php
 class Memo extends Model{
-    public $parentId;
+    public $parentid;
     public $name;
     public $content;
      

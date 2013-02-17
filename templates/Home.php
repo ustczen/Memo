@@ -104,7 +104,7 @@ function navi($elems, $orig = false){
 function getChildren($elems, $id){
     $children = array();
     foreach($elems as $cat){
-        if ($cat->parentId == $id){
+        if ($cat->parentid == $id){
             array_push($children, $cat);
         }
     }

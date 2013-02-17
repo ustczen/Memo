@@ -1,6 +1,6 @@
 <?php
 class Category extends Model{
-    public $parentId;
+    public $parentid;
     public $name;
      
     public function __construct($db) {
