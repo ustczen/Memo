@@ -1,3 +1,7 @@
+<?php if (isset($data['registered'])): ?>
+    <div class="alert alert-success">A new user has been created!</div>
+<?php endif; ?>
+
 <div class="userForm">
     <h2>Register</h2>
     <?php if (!$data['registered']): ?>
@@ -12,6 +16,6 @@
             <a href=".">Login here if you already have registered</a>
         </form>
     <?php else: ?>
-        <div class="alert alert-success">A new user has been created!</div>
+        <a href=".">Login</a>
     <?php endif; ?>
 </div>

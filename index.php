@@ -5,7 +5,7 @@ require_once "conf.php";
 require_once "models/DbEntry.php";
 require_once "models/Model.php";
 require_once "models/Memo.php";
-require_once "models/User.php";
+require_once "models/UserTable.php";
 require_once "models/Category.php";
 //views
 require_once "views/View.php";
@@ -25,7 +25,7 @@ if (isset($_POST['name']) && isset($_POST['password'])){
 }
 
 if (isset($_COOKIE['user']) && isset($_COOKIE['pw'])){
-    $user = new DbEntry('User', $db);
+    $user = new DbEntry('UserTable', $db);
     $user = $user->getWhere('name', $_COOKIE['user']);
     if (!$user || !$user->checkPassword($_COOKIE['pw'])){
         $user = null;

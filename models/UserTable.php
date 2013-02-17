@@ -1,10 +1,10 @@
 <?php
-class User extends Model{
+class UserTable extends Model{
     public $name;
     public $password;
      
     public function __construct($db) {
-        $this->table = "User";
+        $this->table = "UserTable";
         parent::__construct($db);
     }
     

@@ -7,7 +7,7 @@ class RegisterController extends Controller{
         if (!empty($this->request["name"]) && !empty($this->request["password"])){
             
             //check if user already exists
-            $u = new DbEntry('User', $this->db);
+            $u = new DbEntry('UserTable', $this->db);
             $u = $u->getWhere('name', $this->request["name"]);
             
             if ($u){
@@ -16,7 +16,7 @@ class RegisterController extends Controller{
             }
             else{
                 //create a new user
-                $user = new User($this->db);
+                $user = new UserTable($this->db);
                 $user->name = $this->request["name"];
                 $user->setPassword($this->request["password"]);
                 //save the db record
