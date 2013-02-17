@@ -1,11 +1,11 @@
 <?php include "includes/Login.php"; ?>
 
 <div class="col narrow">
-    <?php if (!empty($data['categories'])): ?>
     <a href="." class="categoryEntry <?php if (!isset($_GET['category'])): ?>active<?php endif; ?>">
         All
     </a>
-        <ul>
+    <ul>
+        <?php if (!empty($data['categories'])): ?>
             <?php foreach($data['categories'] as $cat): ?>
                 <li class="categoryEntry entry <?php if (isset($_GET['category']) && $_GET['category'] == $cat->id): ?>active<?php endif; ?>">
                     <span class="entryContent">
@@ -25,21 +25,24 @@
                     </form>
                 </li>
             <?php endforeach; ?>
-        </ul>
-    <?php endif; ?>
-
-    <?php if (!empty($user)): ?>
-        <div class="well entry">
-            <div class="entryContent">
-                <button class="btn editEntry">Add a category <i class="icon-plus"></i></button>
-            </div>
-            <form method="post" class="entryForm">
-                <input type="text" name="category_name" placeholder="Name" />
-                <input type="submit" value="Save" class="btn" />
-                <input type="reset" value="Cancel" class="btn closeEdit" />
-            </form>
-        </div>
-    <?php endif; ?>
+        <?php endif; ?>
+        
+        <hr />
+                
+        <?php if (!empty($user)): ?>
+            <li class="categoryEntry entry">
+                <div class="entryContent">
+                    <button class="btn editEntry">Add a category <i class="icon-plus"></i></button>
+                </div>
+                <form method="post" class="entryForm">
+                    <input type="text" name="category_name" placeholder="Name" />
+                    <input type="submit" value="Save" class="btn" />
+                    <input type="reset" value="Cancel" class="btn closeEdit" />
+                </form>
+            </li>
+        <?php endif; ?>
+    </ul>
+    
 </div>
 
 <div class="col wide">
