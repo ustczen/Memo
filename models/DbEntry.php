@@ -36,7 +36,7 @@ class DbEntry{
         $obj = new $this->table($this->db);
         $obj->populate($f);
         
-        return $obj;
+        return $this->cleanHtml($obj);
     }
     
     public function getWhere($col, $value=false){
@@ -52,7 +52,7 @@ class DbEntry{
         $obj = new $this->table($this->db);
         $obj->populate($f);
         
-        return $obj;
+        return $this->cleanHtml($obj);
     }
     
     public function getManyWhere($col, $value=false, $limit=512){
@@ -68,7 +68,7 @@ class DbEntry{
         while($f = $q->fetch()){
             $obj = new $this->table($this->db);
             $obj->populate($f);
-            array_push($rows, $obj);
+            array_push($rows, $this->cleanHtml($obj));
         }
         
         return $rows;
@@ -100,5 +100,14 @@ class DbEntry{
         }
         
         return $values;
+    }
+    
+    private function cleanHtml($obj){
+        foreach($obj as $key => $value){
+            if (is_string($value)){
+                $obj->$key = htmlspecialchars($value);
+            }
+        }
+        return $obj;
     }
 }
