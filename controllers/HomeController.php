@@ -23,6 +23,7 @@ class HomeController extends Controller{
                     $memo = new Memo($this->db);
                     $memo->name = $this->request['name'];
                     $memo->content = $this->request['content'];
+                    if (isset($this->request['category'])) $memo->parentId = $this->request['category'];
                     $memo->ownerId = $user->id;
                     $memo->create();
                 }

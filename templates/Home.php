@@ -66,9 +66,12 @@
     <?php if (!empty($user)): ?>
         <div class="well entry">
             <span class="entryContent">
-                <button class="btn editEntry">Add a memo <i class="icon-plus"></i></button>
+                <button class="btn editEntry">Add a note <i class="icon-plus"></i></button>
             </span>
             <form method="post" class="entryForm">
+                <?php if (!empty($_GET['category'])): ?>
+                    <input type="hidden" name="category" value="<?php echo (int)$_GET['category']; ?>" />
+                <?php endif; ?>
                 <input type="text" name="name" placeholder="Name" />
                 <textarea name="content" placeholder="Content" rows="3"></textarea>
                 <input type="submit" value="Save" class="btn" />
