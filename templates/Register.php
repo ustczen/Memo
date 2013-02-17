@@ -1,4 +1,4 @@
-<?php if (isset($data['registered'])): ?>
+<?php if ($data['registered']): ?>
     <div class="alert alert-success">A new user has been created!</div>
 <?php endif; ?>
 
