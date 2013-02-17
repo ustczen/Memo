@@ -22,7 +22,7 @@ class Model{
         
         //loop through variables in current object
         foreach($this as $key => $value){
-            if ($key == 'db' || $key == 'table' || $key == 'id') continue;
+            if ($key == 'db' || $key == 'table' || $key == 'id' || $key == 'created' || $key == 'modified') continue;
             array_push($keyval, $key."=?");
             array_push($values, $value);
         }
