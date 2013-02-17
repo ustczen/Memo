@@ -1,20 +1,20 @@
 <?php include "includes/Login.php"; ?>
 
-<div class="col narrow">
-    <a href="." class="categoryEntry <?php if (!isset($_GET['category'])): ?>active<?php endif; ?>">
-        All
-    </a>
-    
-    <?php if (!empty($data['categories'])): ?>
-        <?php
-            navi($data['categories']);
-        ?>
-    <?php endif; ?>
+<?php if (!empty($user)): ?>
+    <div class="col narrow">
+        <a href="." class="categoryEntry <?php if (!isset($_GET['category'])): ?>active<?php endif; ?>">
+            All
+        </a>
 
-    <hr />
-                
-    <ul>
-        <?php if (!empty($user)): ?>
+        <?php if (!empty($data['categories'])): ?>
+            <?php
+                navi($data['categories']);
+            ?>
+        <?php endif; ?>
+
+        <hr />
+
+        <ul>
             <li class="categoryEntry entry">
                 <div class="entryContent">
                     <button class="btn editEntry">Add a category <i class="icon-plus"></i></button>
@@ -27,33 +27,31 @@
                     <input type="reset" value="Cancel" class="btn closeEdit" />
                 </form>
             </li>
-        <?php endif; ?>
-    </ul>
-    
-</div>
+        </ul>
 
-<div class="col wide">
-    <?php if (!empty($data['memos'])): ?>
-        <?php foreach($data['memos'] as $memo): ?>
-            <div class="well entry">
-                <div class="entryContent">
-                    <p><strong><?php echo $memo->name; ?></strong></p>
-                    <p><?php echo $memo->content; ?></p>
-                    <span class="controls">
-                    <button class="btn editEntry"><i class="icon-edit"></i></button>
-                    <a href="?delete=<?php echo $memo->id; ?>" class="btn"><i class="icon-trash"></i></a>
+    </div>
+
+    <div class="col wide">
+        <?php if (!empty($data['memos'])): ?>
+            <?php foreach($data['memos'] as $memo): ?>
+                <div class="well entry">
+                    <div class="entryContent">
+                        <p><strong><?php echo $memo->name; ?></strong></p>
+                        <p><?php echo $memo->content; ?></p>
+                        <span class="controls">
+                        <button class="btn editEntry"><i class="icon-edit"></i></button>
+                        <a href="?delete=<?php echo $memo->id; ?>" class="btn"><i class="icon-trash"></i></a>
+                    </div>
+                    <form method="post" class="entryForm">
+                        <input type="text" name="name" placeholder="Name" value="<?php echo $memo->name; ?>" />
+                        <textarea name="content" placeholder="Content" rows="3"><?php echo $memo->content; ?></textarea>
+                        <input type="submit" value="Save" class="btn" />
+                        <input type="reset" value="Cancel" class="btn closeEdit" />
+                    </form>
                 </div>
-                <form method="post" class="entryForm">
-                    <input type="text" name="name" placeholder="Name" value="<?php echo $memo->name; ?>" />
-                    <textarea name="content" placeholder="Content" rows="3"><?php echo $memo->content; ?></textarea>
-                    <input type="submit" value="Save" class="btn" />
-                    <input type="reset" value="Cancel" class="btn closeEdit" />
-                </form>
-            </div>
-        <?php endforeach; ?>
-    <?php endif; ?>
+            <?php endforeach; ?>
+        <?php endif; ?>
 
-    <?php if (!empty($user)): ?>
         <div class="well entry">
             <span class="entryContent">
                 <button class="btn editEntry">Add a note <i class="icon-plus"></i></button>
@@ -67,8 +65,8 @@
                 <input type="reset" value="Cancel" class="btn closeEdit" />
             </form>
         </div>
-    <?php endif; ?>
-</div>
+    </div>
+<?php endif; ?>
 
 <?php
 function navi($elems, $orig = false){

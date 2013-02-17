@@ -84,3 +84,24 @@ ul li{
 .categoryEntry .entryForm input[type=text]{
     width: 93%;
 }
+
+.userForm{
+    width: 230px;
+    padding: 20px;
+    background: #ddd;
+    border-radius: 3px;
+    margin-left: -125px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+}
+
+.logout{
+    width: 100%;
+}
+
+.logout .btn{
+    margin-bottom: 0;
+    float: right;
+    margin-right: 15px;
+}
