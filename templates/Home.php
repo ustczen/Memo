@@ -43,6 +43,7 @@
                         <a href="?delete=<?php echo $memo->id; ?>" class="btn"><i class="icon-trash"></i></a>
                     </div>
                     <form method="post" class="entryForm">
+                        <input type="hidden" name="id" value="<?php echo $memo->id; ?>" />
                         <input type="text" name="name" placeholder="Name" value="<?php echo $memo->name; ?>" />
                         <textarea name="content" placeholder="Content" rows="3"><?php echo $memo->content; ?></textarea>
                         <input type="submit" value="Save" class="btn" />
