@@ -74,7 +74,11 @@ class HomeController extends Controller{
             
             //fetch the memos from the db
             $memos = new dbEntry('Memo', $this->db);
-            if ($user) $this->data['memos'] = $memos->getManyWhere('ownerId', $user->id);
+            if (empty($this->request['category'])) $this->data['memos'] = $memos->getManyWhere('ownerId', $user->id);
+            else $this->data['memos'] = $memos->getManyWhere(array(
+                'ownerId' => $user->id,
+                'parentId' => (int)$this->request['category']
+                ));
         }
         
         parent::init();

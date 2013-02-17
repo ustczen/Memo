@@ -40,11 +40,10 @@ class DbEntry{
     }
     
     public function getWhere($col, $value=false){
-        $value = mysql_real_escape_string($value);
-        $col = mysql_real_escape_string($col);
+        $where = $this->buildWhere($col, $value);
         
         //make a query
-        $q = $this->db->prepare("SELECT * FROM ".$this->table." WHERE ".$col."='".$value."' LIMIT 1");
+        $q = $this->db->prepare("SELECT * FROM ".$this->table." WHERE ".$where." LIMIT 1");
         $q->execute();
         
         $f = $q->fetch();
@@ -55,12 +54,11 @@ class DbEntry{
         return $obj;
     }
     
-    public function getManyWhere($col, $value, $limit=512){
-        $value = mysql_real_escape_string($value);
-        $col = mysql_real_escape_string($col);
+    public function getManyWhere($col, $value=false, $limit=512){
+        $where = $this->buildWhere($col, $value);
         
         //make a query
-        $q = $this->db->prepare("SELECT * FROM ".$this->table." WHERE ".$col."='".$value."' LIMIT ".$limit);
+        $q = $this->db->prepare("SELECT * FROM ".$this->table." WHERE ".$where." LIMIT ".$limit);
         $q->execute();
         
         //put the results in an array
@@ -72,5 +70,21 @@ class DbEntry{
         }
         
         return $rows;
+    }
+    
+    private function buildWhere($col, $value=false){
+        $where = array();
+        if (is_array($col)){
+            foreach($col as $key => $value){
+                $value = mysql_real_escape_string($value);
+                $key = mysql_real_escape_string($key);
+                array_push($where, $key." = '".$value."'");
+            }
+        }
+        else{
+            array_push($where, $col." = '".$value."'");
+        }
+        
+        return implode(' AND ', $where);
     }
 }
