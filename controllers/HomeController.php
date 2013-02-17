@@ -59,6 +59,15 @@ class HomeController extends Controller{
                 if ($memo && $memo->ownerId == $user->id) $memo->delete();
             }
         
+            //if the user pressed delete (category)
+            if ( !empty($this->request['delete_category'])){
+                //fetch the category
+                $db = new DbEntry('Category', $this->db);
+                $cat = $db->getRow($this->request['delete_category']);
+                //if the current user is the owner, delete the memo
+                if ($cat && $cat->ownerId == $user->id) $cat->delete();
+            }
+            
             //fetch the categories from the db
             $categories = new dbEntry('Category', $this->db);
             $this->data['categories'] = $categories->getManyWhere('ownerId', $user->id);
