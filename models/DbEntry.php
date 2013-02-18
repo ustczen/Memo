@@ -60,7 +60,7 @@ class DbEntry{
         $values = $this->buildValues($col, $value);
         
         //make a query
-        $q = $this->db->prepare("SELECT * FROM ".$this->table." WHERE ".$where." LIMIT ".$limit);
+        $q = $this->db->prepare("SELECT * FROM ".$this->table." WHERE ".$where." ORDER BY id ASC LIMIT ".$limit);
         $q->execute($values);
         
         //put the results in an array
