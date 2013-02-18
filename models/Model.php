@@ -27,7 +27,7 @@ class Model{
             array_push($values, $value);
         }
         
-        $q = $this->db->prepare("UPDATE ".$this->table." SET ".implode(",", $keyval)." WHERE id=".(int)$this->id." LIMIT 1");
+        $q = $this->db->prepare("UPDATE ".$this->table." SET ".implode(",", $keyval)." WHERE id=".(int)$this->id);
         $q->execute($values);
     }
     
