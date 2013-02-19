@@ -11,15 +11,14 @@ global $user;
     <body>
         <?php include $this->template.".php"; ?>
         
-        <?php
-        if (isset($data['errors'])):
-            foreach($data['errors'] as $error):
-        ?>
-                <div class="alert alert-error"><?php echo $error; ?></div>
-        <?php
-            endforeach;
-        endif;
-        ?>
+        <?php if (isset($data['errors'])): ?>
+            <div class="errors">
+                <?php foreach($data['errors'] as $error): ?>
+                    <div class="alert alert-error"><?php echo $error; ?></div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+
         <script src="js/jquery.js"></script>
         <script src="js/app.js"></script>
     </body>

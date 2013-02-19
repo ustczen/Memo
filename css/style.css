@@ -6,6 +6,10 @@ form .btn{
     padding: 10px 0 0 10px;
 }
 
+.errors{
+    padding: 10px;
+}
+
 .entryForm{
     display: none;
     margin: 15px 0 0 0;
