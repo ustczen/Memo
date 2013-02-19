@@ -1,73 +1,77 @@
-<?php include "includes/Login.php"; ?>
+<?php include "includes/Navi.php"; ?>
 
-<?php if (!empty($user)): ?>
-    <div class="col narrow">
-        <a href="." class="categoryEntry <?php if (!isset($_GET['category'])): ?>active<?php endif; ?>">
-            All
-        </a>
+<div class="wrapper">
+    <?php include "includes/Login.php"; ?>
 
-        <?php if (!empty($data['categories'])): ?>
-            <?php
-                navi($data['categories']);
-            ?>
-        <?php endif; ?>
+    <?php if (!empty($user)): ?>
+        <div class="col narrow">
+            <a href="." class="categoryEntry <?php if (!isset($_GET['category'])): ?>active<?php endif; ?>">
+                All
+            </a>
 
-        <hr />
+            <?php if (!empty($data['categories'])): ?>
+                <?php
+                    navi($data['categories']);
+                ?>
+            <?php endif; ?>
 
-        <ul>
-            <li class="categoryEntry entry">
-                <div class="entryContent">
-                    <button class="btn editEntry">Add a category <i class="icon-plus"></i></button>
-                </div>
-                <form action=".<?php if (!empty($_GET['category'])){
-                    echo '?category='.(int)$_GET['category'];
-                }?>" method="post" class="entryForm">
-                    <input type="text" name="category_name" placeholder="Name" />
-                    <input type="submit" value="Save" class="btn" />
-                    <input type="reset" value="Cancel" class="btn closeEdit" />
-                </form>
-            </li>
-        </ul>
+            <hr />
 
-    </div>
-
-    <div class="col wide">
-        <?php if (!empty($data['memos'])): ?>
-            <?php foreach($data['memos'] as $memo): ?>
-                <div class="well entry">
+            <ul>
+                <li class="categoryEntry entry">
                     <div class="entryContent">
-                        <p><strong><?php echo $memo->name; ?></strong></p>
-                        <p><?php echo $memo->content; ?></p>
-                        <span class="controls">
-                        <button class="btn editEntry"><i class="icon-edit"></i></button>
-                        <a href="?delete=<?php echo $memo->id; ?>" class="btn"><i class="icon-trash"></i></a>
+                        <button class="btn editEntry">Add a category <i class="icon-plus"></i></button>
                     </div>
-                    <form method="post" class="entryForm">
-                        <input type="hidden" name="id" value="<?php echo $memo->id; ?>" />
-                        <input type="text" name="name" placeholder="Name" value="<?php echo $memo->name; ?>" />
-                        <textarea name="content" placeholder="Content" rows="3"><?php echo $memo->content; ?></textarea>
+                    <form action=".<?php if (!empty($_GET['category'])){
+                        echo '?category='.(int)$_GET['category'];
+                    }?>" method="post" class="entryForm">
+                        <input type="text" name="category_name" placeholder="Name" />
                         <input type="submit" value="Save" class="btn" />
                         <input type="reset" value="Cancel" class="btn closeEdit" />
                     </form>
-                </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
+                </li>
+            </ul>
 
-        <div class="well entry">
-            <span class="entryContent">
-                <button class="btn editEntry">Add a note <i class="icon-plus"></i></button>
-            </span>
-            <form action=".<?php if (!empty($_GET['category'])){
-                    echo '?category='.(int)$_GET['category'];
-            }?>" method="post" class="entryForm">
-                <input type="text" name="name" placeholder="Name" />
-                <textarea name="content" placeholder="Content" rows="3"></textarea>
-                <input type="submit" value="Save" class="btn" />
-                <input type="reset" value="Cancel" class="btn closeEdit" />
-            </form>
         </div>
-    </div>
-<?php endif; ?>
+
+        <div class="col wide">
+            <?php if (!empty($data['memos'])): ?>
+                <?php foreach($data['memos'] as $memo): ?>
+                    <div class="well entry">
+                        <div class="entryContent">
+                            <p><strong><?php echo $memo->name; ?></strong></p>
+                            <p><?php echo $memo->content; ?></p>
+                            <span class="controls">
+                            <button class="btn editEntry"><i class="icon-edit"></i></button>
+                            <a href="?delete=<?php echo $memo->id; ?>" class="btn"><i class="icon-trash"></i></a>
+                        </div>
+                        <form method="post" class="entryForm">
+                            <input type="hidden" name="id" value="<?php echo $memo->id; ?>" />
+                            <input type="text" name="name" placeholder="Name" value="<?php echo $memo->name; ?>" />
+                            <textarea name="content" placeholder="Content" rows="3"><?php echo $memo->content; ?></textarea>
+                            <input type="submit" value="Save" class="btn" />
+                            <input type="reset" value="Cancel" class="btn closeEdit" />
+                        </form>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+
+            <div class="well entry">
+                <span class="entryContent">
+                    <button class="btn editEntry">Add a note <i class="icon-plus"></i></button>
+                </span>
+                <form action=".<?php if (!empty($_GET['category'])){
+                        echo '?category='.(int)$_GET['category'];
+                }?>" method="post" class="entryForm">
+                    <input type="text" name="name" placeholder="Name" />
+                    <textarea name="content" placeholder="Content" rows="3"></textarea>
+                    <input type="submit" value="Save" class="btn" />
+                    <input type="reset" value="Cancel" class="btn closeEdit" />
+                </form>
+            </div>
+        </div>
+    <?php endif; ?>
+</div>
 
 <?php
 function navi($elems, $orig = false){

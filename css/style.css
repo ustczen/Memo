@@ -1,9 +1,9 @@
-body{
-    padding: 10px;
-}
-
 form .btn{
     margin-bottom: 10px;
+}
+
+.wrapper{
+    padding: 10px 0 0 10px;
 }
 
 .entryForm{

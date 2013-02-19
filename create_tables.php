@@ -8,6 +8,7 @@ $q = $db->prepare("CREATE TABLE UserTable (
   modified timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   name varchar(255) NOT NULL,
   password varchar(255) NOT NULL,
+  admin tinyint(4) NOT NULL,
   PRIMARY KEY (id)
 )");
 $q->execute();

@@ -13,6 +13,7 @@ require_once "views/View.php";
 require_once "controllers/Controller.php";
 require_once "controllers/HomeController.php";
 require_once "controllers/RegisterController.php";
+require_once "controllers/UsersController.php";
 
 $printed = array();
 
@@ -42,8 +43,15 @@ if ($_GET["page"] == "register"){
     //create a view and a controller for the register page
     $view       = new View("Register");
     $controller = new RegisterController($view, $_REQUEST, $db);
+    
+} else if ($_GET["page"] == "users") {
+    //create a view and a controller for the users page
+    $view       = new View("Users");
+    $controller = new UsersController($view, $_REQUEST, $db);
+    
 } else {
     //create a view and a controller for the home page
     $view       = new View("Home");
     $controller = new HomeController($view, $_REQUEST, $db);
+    
 }
