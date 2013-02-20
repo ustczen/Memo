@@ -15,7 +15,7 @@
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
    sodipodi:docname="kaytto.svg"
-   inkscape:export-filename="/media/1.0 TB Hard Disk/Web/Memo/kaytto.png"
+   inkscape:export-filename="/home/tuure/public_html/Memo/docs/kaytto.png"
    inkscape:export-xdpi="80"
    inkscape:export-ydpi="80">
   <defs
@@ -28,8 +28,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4688995"
-     inkscape:cx="372.04724"
-     inkscape:cy="867.44364"
+     inkscape:cx="390.28731"
+     inkscape:cy="695.46813"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -58,7 +58,7 @@
        style="color:#000000;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.99999976;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect3965"
        width="740"
-       height="726.45575"
+       height="768.81769"
        x="-3.2028854"
        y="5.9671154"
        inkscape:export-filename="/media/1.0 TB Hard Disk/Web/Memo/kaytto.png"
@@ -129,7 +129,7 @@
        style="color:#000000;fill:none;stroke:#000000;stroke-width:0.88996398;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect3799"
        width="355.6337"
-       height="596.92511"
+       height="637.36145"
        x="191.18924"
        y="76.004341" />
     <rect
@@ -294,12 +294,12 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <rect
-       style="color:#000000;fill:#e8e8e8;fill-opacity:1;stroke:#3e3e3e;stroke-width:1.57654142;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       id="rect3809-3-9-5"
+       style="color:#000000;fill:#e8e8e8;fill-opacity:1;stroke:#3e3e3e;stroke-width:1.5765413;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3809-3-9-57-9"
        width="251.29576"
-       height="57.209461"
+       height="36.105225"
        x="239.0401"
-       y="508.85834"
+       y="508.85828"
        rx="3.9813683"
        ry="3.9813683" />
     <flowRoot
@@ -314,20 +314,20 @@
            x="244.45691"
            y="99.78833" /></flowRegion><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial"
-         id="flowPara3059-5">Kaikkien käyttäjien tietojen tarkastelu</flowPara></flowRoot>    <rect
+         id="flowPara3059-5">Käyttäjien listaus</flowPara></flowRoot>    <rect
        style="color:#000000;fill:#e8e8e8;fill-opacity:1;stroke:#3e3e3e;stroke-width:1.5765413;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect3809-3-9-57"
        width="251.29576"
        height="36.105225"
        x="239.0401"
-       y="596.67914"
+       y="574.8941"
        rx="3.9813683"
        ry="3.9813683" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot3801-96-0-00"
        style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Boycott;-inkscape-font-specification:Boycott"
-       transform="matrix(0.71485665,0,0,0.71484701,75.12016,531.84471)"><flowRegion
+       transform="matrix(0.71485665,0,0,0.71484701,75.12016,510.05969)"><flowRegion
          id="flowRegion3803-39-1-3"><rect
            id="rect3805-16-4-3"
            width="351.53308"
@@ -433,14 +433,41 @@
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1.5765413;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="M 616.19515,328.42125 491.26939,554.59516"
+       d="M 616.19515,328.42125 491.26939,535.53327"
        id="path3811-4-9-5-1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1.5765413;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="M 616.19515,328.42124 491.26939,622.67331"
+       d="M 616.19515,328.42124 491.26939,598.84595"
        id="path3811-4-9-5-1-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <rect
+       style="color:#000000;fill:#e8e8e8;fill-opacity:1;stroke:#3e3e3e;stroke-width:1.5765413;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3809-3-9-57-6"
+       width="251.29576"
+       height="36.105225"
+       x="239.0401"
+       y="636.84521"
+       rx="3.9813683"
+       ry="3.9813683" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3801-96-0-00-0"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Boycott;-inkscape-font-specification:Boycott"
+       transform="matrix(0.71485665,0,0,0.71484701,75.12016,572.01083)"><flowRegion
+         id="flowRegion3803-39-1-3-0"><rect
+           id="rect3805-16-4-3-5"
+           width="351.53308"
+           height="111.11678"
+           x="244.45691"
+           y="99.78833" /></flowRegion><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial"
+         id="flowPara3177-5">Käyttäjän ylentäminen</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:1.5765413;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="M 616.19515,328.42123 491.26939,663.5202"
+       id="path3811-4-9-5-1-6-6"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
   </g>
