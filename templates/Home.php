@@ -1,4 +1,6 @@
-<?php include "includes/Navi.php"; ?>
+<?php if (!empty($user)): ?>
+    <?php include "includes/Navi.php"; ?>
+<?php endif; ?>
 
 <div class="wrapper">
     <?php include "includes/Login.php"; ?>
